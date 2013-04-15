@@ -19,3 +19,8 @@ Assuming you use a shared or exposed Redis backend, or even need to comply with 
     var signedRedisStore = secuRediStore.create({filter: "secretSigningKey"}); // will add signing to your stored sessions
     var encryptedRedisStore = secuRediStore.create({filter: "des3;secretEncryptionPassword"}); // will add encryption to your stored sessions
     console.log(secuRediStore.describe()); // will print out some docs about the available options that the store constructor accepts
+
+
+### TODO:
+    session destroy
+    session gc handling
