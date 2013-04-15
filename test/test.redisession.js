@@ -7,8 +7,9 @@
 require('chai').should();
 describe("Test RediSession", function() {
     var client;
+    return true;
     before(function(){
-        var redisFactory = require('../');
+        var redisFactory = require('../')(require('express'));
         client = redisFactory.createClient();
         var s = new redisFactory.RedisSession({ceva:1});
         //console.log(s);

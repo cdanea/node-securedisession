@@ -21,6 +21,7 @@
     "dependencies": {
         "crypto": "*",
         "hiredis": "*",
+        "mc" : "*",
         "redis":"*",
         "underscore":"*",
         "connect": "*",
