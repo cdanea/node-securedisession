@@ -1,0 +1,44 @@
+{
+    "name": "securedissession",
+    "author" : {
+        "name": "Ciprian Danea",
+        "email" : "ciprian@danea.ro"
+    },
+    "contributors": [
+        "Ciprian Danea <ciprian@danea.ro>"
+    ],
+    "files" : [
+        "./lib/", "index.js", "README.md", ".npmignore", "package.json"
+    ],
+    "main" : "index.js",
+    "repository" :
+    { "type" : "git"
+        , "url" : "http://github.com/isaacs/npm.git"
+    },
+    "description": "Simple secure redis enabled session storage library. Provides session prefixing, signing or encryption for storage on shared redis servers where others might have access to your users' data.",
+    "dependencies": {
+        "crypto": "*",
+        "hiredis": "*",
+        "redis":"*",
+        "underscore":"*",
+        "connect": "*",
+        "uuid": "*",
+        "debug" : "*",
+        "microtime": "*"
+    },
+    "keywords": [
+        "redis", "connect", "express", "session", "signed", "encryption", "crypto", "secure"
+    ],
+    "scripts": {
+        "install" : "",
+        "start" : "",
+        "test" : "node_modules/.bin/mocha ./test"
+    },
+    "devDependencies" : {
+        "chai" : "*",
+        "mocha": "*"
+    },
+    "license": "MIT",
+    "test" : "mocha ./test/",
+    "engine": "node >= 0.1"
+}
