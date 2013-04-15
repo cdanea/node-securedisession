@@ -8,14 +8,14 @@ require('chai').should();
 describe("Test SecuRediSession", function() {
     var Store = require('connect').session.Store,
         EventEmitter = require('events').EventEmitter,
-        RediStore = require('../lib/securedistore.class.js')(Store);
+        SecuRediStore = require('../lib/securedistore.class.js')(Store);
 
     it("should be a redis store", function(){
-        RediStore.should.have.property('getStore');
-        RediStore.getStore.should.be.a('function');
-        RediStore.getStore().should.be.a('object');
-        RediStore.getStore().should.be.instanceOf(Store);
-        RediStore.getStore().should.be.instanceOf(EventEmitter);
+        SecuRediStore.should.have.property('getStore');
+        SecuRediStore.getStore.should.be.a('function');
+        SecuRediStore.getStore().should.be.a('object');
+        SecuRediStore.getStore().should.be.instanceOf(Store);
+        SecuRediStore.getStore().should.be.instanceOf(EventEmitter);
     });
     var ciphers = ['aes256', 'des', 'des3', 'blowfish', 'cast-cbc', 'cast', '', null],
         secrets = ['secreT', 'othe432453fdf', '    really big 082329087423908472098347   |||| ++__ \\\\\\\\~~~~~~~\'"-----  ', '', null],
@@ -31,20 +31,20 @@ describe("Test SecuRediSession", function() {
                     } else {
                         arg = null;
                     }
-                    var store = RediStore.getStore();
+                    var store = SecuRediStore.getStore();
                     text.should.equal(store.getFilter(store.setFilter(text)));
                 });
             });
         });
     });
     it("Should contain a mapping object", function(){
-        RediStore.describe().should.be.an('object').with.property('socket_nodelay');
+        SecuRediStore.describe().should.be.an('object').with.property('socket_nodelay');
     });
     var filters = [null, 'secretSignKey', 'aes256;verySecretKey'], rs, i=0;
     filters.forEach(function(value){
         it("Should store into Redis", function(done){
             var dummy = {test:'value', 'stuff': 'other value', filter: value};
-            rs = RediStore.getStore(value?{filter:value}:{});
+            rs = SecuRediStore.getStore(value?{filter:value}:{});
             rs.set('ceva' + (++i), dummy, function(error, reply){
                 reply.should.deep.equal(dummy);
                 done();

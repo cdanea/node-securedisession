@@ -10,6 +10,8 @@
     "files" : [
         "./lib/", "index.js", "README.md", ".npmignore", "package.json"
     ],
+    "stable" : "NO",
+    "private": true,
     "main" : "index.js",
     "repository" :
     { "type" : "git"
@@ -30,8 +32,6 @@
         "redis", "connect", "express", "session", "signed", "encryption", "crypto", "secure"
     ],
     "scripts": {
-        "install" : "",
-        "start" : "",
         "test" : "node_modules/.bin/mocha ./test"
     },
     "devDependencies" : {
