@@ -25,3 +25,5 @@ Assuming you use a shared or exposed Redis backend, or even need to comply with 
     session destroy
     session gc handling
     extend test suite coverage
+    remove underscore dependency (in general remove as many dependencies as possible)
+    abstract away from redis and include other backends (memcache, mysql, etc)
