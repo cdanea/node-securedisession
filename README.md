@@ -24,3 +24,4 @@ Assuming you use a shared or exposed Redis backend, or even need to comply with 
 ### TODO:
     session destroy
     session gc handling
+    extend test suite coverage
